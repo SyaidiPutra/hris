@@ -278,79 +278,70 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-people"></i><span>SDM</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed" data-bs-target="#recruitment-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-fingerprint"></i><span>Recruitment</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <ul id="recruitment-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="<?= BASEURL; ?>/manpowerRequest">
+              <i class="bi bi-circle"></i><span>Permintaan Tenaga Kerja</span>
+            </a>
+          </li>
           <li>
             <a href="<?= BASEURL; ?>/calonKaryawan">
-              <i class="bi bi-circle"></i><span>PTK</span>
+              <i class="bi bi-circle"></i><span>Calon Karyawan</span>
             </a>
           </li>
-          <li>
-            <a href="<?= BASEURL; ?>/recruitment">
-              <i class="bi bi-circle"></i><span>Rekrutmen</span>
-            </a>
-          </li>
+        </ul>
+      </li><!-- End Components Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#development-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-arrows-fullscreen"></i><span>Developement</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="development-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="<?= BASEURL; ?>/training">
               <i class="bi bi-circle"></i><span>Training</span>
+            </a>
+          </li>
+          <li>
+            <a href="<?= BASEURL; ?>/matrixSkill">
+              <i class="bi bi-circle"></i><span>Matrix Skill</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Components Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#utility-forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-card-list"></i><span>Utility Forms</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="utility-forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="<?= BASEURL; ?>/kaizen">
+              <i class="bi bi-circle"></i><span>Kaizen</span>
+            </a>
+          </li>
+          <li>
+            <a href="<?= BASEURL; ?>/appraisal">
+              <i class="bi bi-circle"></i><span>Appraisal</span>
+            </a>
+          </li>
+          <li>
+            <a href="<?= BASEURL; ?>/transition"> <!-- Untuk promosi, mutasi dan demosi -->
+              <i class="bi bi-circle"></i><span>Transition</span>
+            </a>
+          </li>
+          <li>
+            <a href="<?= BASEURL; ?>/sp">
+              <i class="bi bi-circle"></i><span>Warning Letter</span>
             </a>
           </li>
         </ul>
       </li><!-- End Components Nav -->
 
       <!-- <li class="nav-heading">Pages</li> -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="<?= BASEURL; ?>/skill">
-          <i class="bi bi-puzzle"></i>
-          <span>Matrix Skill</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="<?= BASEURL; ?>/kaizen">
-          <i class="bi bi-lightbulb"></i>
-          <span>Kaizen</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="<?= BASEURL; ?>/appraisal">
-        <i class="bi bi-card-list"></i>
-          <span>Penilaian</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="<?= BASEURL; ?>/promote">
-          <i class="bi bi-arrows-fullscreen"></i>
-          <span>Promosi</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="<?= BASEURL; ?>/mutation">
-          <i class="bi bi-box-arrow-right"></i>
-          <span>Mutasi</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="<?= BASEURL; ?>/demotion">
-          <i class="bi bi-fullscreen-exit"></i>
-          <span>Demosi</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="<?= BASEURL; ?>/warning-letter">
-          <i class="bi bi-envelope"></i>
-          <span>Surat Peringatan</span>
-        </a>
-      </li>
-
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav-master" data-bs-toggle="collapse" href="#">
           <i class="bi bi-list-ul"></i><span>Master</span><i class="bi bi-chevron-down ms-auto"></i>
