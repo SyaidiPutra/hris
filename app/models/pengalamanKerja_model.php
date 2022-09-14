@@ -17,28 +17,32 @@ class pengalamanKerja_model
 
     public function store1($data)
     {
-        $query = "INSERT INTO pengalaman_kerja VALUES ('', :id_calon_karyawan, :nama_perusahaan, :jabatan, :dept, :durasi, :alasan_berhenti, :jobdesc, :gaji_terakhir, :created_at, :updated_at)";
+        if($data[0]['nama_perusahaan1'] == '') {
+            return 0;
+        } else {
+            $query = "INSERT INTO pengalaman_kerja VALUES ('', :id_calon_karyawan, :nama_perusahaan, :jabatan, :dept, :durasi, :alasan_berhenti, :jobdesc, :gaji_terakhir, :created_at, :updated_at)";
 
-        $this->db->query($query);
-        $this->db->bind('id_calon_karyawan', $data[1]['last_id']);
-        $this->db->bind('nama_perusahaan', $data[0]['nama_perusahaan1']);
-        $this->db->bind('jabatan', $data[0]['jabatan1']);
-        $this->db->bind('dept', $data[0]['dept1']);
-        $this->db->bind('durasi', $data[0]['durasi1']);
-        $this->db->bind('alasan_berhenti', $data[0]['alasan_berhenti1']);
-        $this->db->bind('jobdesc', $data[0]['jobdesc1']);
-        $this->db->bind('gaji_terakhir', $data[0]['gaji_terakhir1']);
-        $this->db->bind('created_at', date('Y-m-d h:i:s'));
-        $this->db->bind('updated_at', null);
+            $this->db->query($query);
+            $this->db->bind('id_calon_karyawan', $data[1]['last_id']);
+            $this->db->bind('nama_perusahaan', $data[0]['nama_perusahaan1']);
+            $this->db->bind('jabatan', $data[0]['jabatan1']);
+            $this->db->bind('dept', $data[0]['dept1']);
+            $this->db->bind('durasi', $data[0]['durasi1']);
+            $this->db->bind('alasan_berhenti', $data[0]['alasan_berhenti1']);
+            $this->db->bind('jobdesc', $data[0]['jobdesc1']);
+            $this->db->bind('gaji_terakhir', $data[0]['gaji_terakhir1']);
+            $this->db->bind('created_at', date('Y-m-d h:i:s'));
+            $this->db->bind('updated_at', null);
 
-        $this->db->execute();
+            $this->db->execute();
 
-        return $this->db->rowCount();
+            return $this->db->rowCount();
+        }
     }
 
     public function store2($data)
     {
-        if(!isset($data[0]['nama_perusahaan2'])) {
+        if($data[0]['nama_perusahaan2'] == '') {
             return 0;
         } else {
             $query = "INSERT INTO pengalaman_kerja VALUES ('', :id_calon_karyawan, :nama_perusahaan, :jabatan, :dept, :durasi, :alasan_berhenti, :jobdesc, :gaji_terakhir, :created_at, :updated_at)";
@@ -63,7 +67,7 @@ class pengalamanKerja_model
 
     public function store3($data)
     {
-        if(!isset($data[0]['nama_perusahaan3'])) {
+        if($data[0]['nama_perusahaan3'] == '') {
             return 0;
         } else {
             $query = "INSERT INTO pengalaman_kerja VALUES ('', :id_calon_karyawan, :nama_perusahaan, :jabatan, :dept, :durasi, :alasan_berhenti, :jobdesc, :gaji_terakhir, :created_at, :updated_at)";

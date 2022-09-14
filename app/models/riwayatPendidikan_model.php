@@ -37,7 +37,7 @@ class riwayatPendidikan_model
 
     public function store2($data)
     {
-        if(!isset($data[0]['jenis_pendidikan'])) {
+        if($data[0]['jenis_pendidikan2'] == '') {
             return 0;
         } else {
             $query = "INSERT INTO riwayat_pendidikan VALUES ('', :id_calon_karyawan, :jenis_pendidikan, :jenjang_pendidikan, :program_keahlian, :nama_lembaga, :alamat_lembaga, :berijazah, :created_at, :updated_at)";
@@ -60,7 +60,7 @@ class riwayatPendidikan_model
 
     public function store3($data)
     {
-        if(!isset($data[0]['jenis_pendidikan'])) {
+        if($data[0]['jenis_pendidikan3'] == '') {
             return 0;
         } else {
             $query = "INSERT INTO riwayat_pendidikan VALUES ('', :id_calon_karyawan, :jenis_pendidikan, :jenjang_pendidikan, :program_keahlian, :nama_lembaga, :alamat_lembaga, :berijazah, :created_at, :updated_at)";

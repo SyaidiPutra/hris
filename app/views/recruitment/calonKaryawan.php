@@ -11,15 +11,36 @@
             <tr>
                 <th>No.</th>
                 <th>Nama Lengkap</th>
+                <th>Pendidikan</th>
+                <th>Pengalaman</th>
                 <th>Option</th>
             </tr>
         </thead>
         <tbody>
             <?php $i=1;?>
             <?php foreach($data['data'] as $d) : ?>
+                <?php $arr_jenis_pendidikan = explode(',', $d['jenis_pendidikan']); ?>
+                <?php $arr_jenjang_pendidikan = explode(',', $d['jenjang_pendidikan']); ?>
+                <?php $arr_program_keahlian = explode(',', $d['program_keahlian']); ?>
+                <?php $arr_nama_lembaga = explode(',', $d['nama_lembaga']); ?>
+                <?php $arr_nama_perusahaan = explode(',', $d['nama_perusahaan']); ?>
+                <?php $arr_jabatan = explode(',', $d['jabatan']); ?>
+                <?php $arr_dept = explode(',', $d['dept']); ?>
+                <?php $arr_durasi = explode(',', $d['durasi']); ?>
+
+                <?php var_dump($arr_program_keahlian)?>
             <tr>
                 <td><?= $i++; ?></td>
                 <td><?= $d['nama_depan'] ?></td>
+                <td>
+                    <!-- Belum dapat -->
+                </td>
+                <td>
+                    <?php $x = 1; ?>
+                    <?php foreach($arr_nama_perusahaan as $index => $value) : ?>
+                        <span style="font-size: 15px; word-wrap: break-word;"><?= $x++; ?>. <?= $arr_nama_perusahaan[$index] ?> (<?= $arr_jabatan[$index] ?> <?= $arr_dept[$index] ?> - <?= round($arr_durasi[$index]/12, 1) ?> Tahun)</span><br> <br>
+                    <?php endforeach; ?>
+                </td>
                 <td>
                     <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editFormModal<?= $d['id'] ?>"><i class="bi bi-pencil-fill"></i></button>
                     <button class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteFormModal<?= $d['id'] ?>"><i class="bi bi-trash"></i></button>
@@ -236,14 +257,14 @@
                                     <div class="mb-3">
                                         <label for="jenis_pendidikan2" class="form-label">Jenis Pendidikan</label>
                                         <select name="jenis_pendidikan2" id="jenis_pendidikan2" class="form-select">
-                                            <option value="" selected>Pilih</option>
+                                            <option value="">Pilih</option>
                                             <option value="Non Formal">Non Formal</option>
                                         </select>
                                     </div>
                                     <div class="mb-3">
                                         <label for="jenjang_pendidikan2" class="form-label">Jenjang Pendidikan</label>
                                         <select name="jenjang_pendidikan2" id="jenjang_pendidikan2" class="form-select">
-                                            <option value="" selected>Pilih</option>
+                                            <option value="">Pilih</option>
                                             <option value="Basic">Basic</option>
                                             <option value="Medium">Medium</option>
                                             <option value="Advanced">Advanced</option>
@@ -290,14 +311,14 @@
                                     <div class="mb-3">
                                         <label for="jenis_pendidikan3" class="form-label">Jenis Pendidikan</label>
                                         <select name="jenis_pendidikan3" id="jenis_pendidikan3" class="form-select">
-                                            <option value="" selected>Pilih</option>
+                                            <option value="">Pilih</option>
                                             <option value="Non Formal">Non Formal</option>
                                         </select>
                                     </div>
                                     <div class="mb-3">
                                         <label for="jenjang_pendidikan3" class="form-label">Jenjang Pendidikan</label>
                                         <select name="jenjang_pendidikan3" id="jenjang_pendidikan3" class="form-select">
-                                            <option value="" selected>Pilih</option>
+                                            <option value="">Pilih</option>
                                             <option value="Basic">Basic</option>
                                             <option value="Medium">Medium</option>
                                             <option value="Advanced">Advanced</option>
