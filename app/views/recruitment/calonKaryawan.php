@@ -70,7 +70,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
-                                    <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" required>
+                                    <select name="jenis_kelamin" id="jenis_kelamin" class="form-select" required>
                                         <option value="" disabled selected>Pilih</option>
                                         <option value="L">Laki-laki</option>
                                         <option value="P">Perempuan</option>
@@ -78,7 +78,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="agama" class="form-label">Agama</label>
-                                    <select name="agama" id="agama" class="form-control" required>
+                                    <select name="agama" id="agama" class="form-select" required>
                                         <option value="" disabled selected>Pilih</option>
                                         <option value="Islam">Islam</option>
                                         <option value="Katolik">Katolik</option>
@@ -94,7 +94,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="status_pernikahan" class="form-label">Status Pernikahan</label>
-                                    <select name="status_pernikahan" id="status_pernikahan" class="form-control" required>
+                                    <select name="status_pernikahan" id="status_pernikahan" class="form-select" required>
                                         <option value="" disabled selected>Pilih</option>
                                         <option value="Menikah">Menikah</option>
                                         <option value="Belum Menikah">Belum Menikah</option>
@@ -160,7 +160,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="alamat_kontak_darurat" class="form-label">Alamat Kontak Darurat</label>
-                                    <textarea class="form-control" name="alamat_kontak_darurat" id="alamat_kontak_darurat" placeholder="Tulis alamat Ibu lengkap" required></textarea>
+                                    <textarea class="form-control" name="alamat_kontak_darurat" id="alamat_kontak_darurat" placeholder="Tulis alamat kontak darurat lengkap" required></textarea>
                                 </div>
                                 <div class="mb-3">
                                     <label for="pekerjaan_kontak_darurat" class="form-label">Pekerjaan Kontak Darurat</label>
@@ -182,78 +182,311 @@
                             </div>
 
                             <div class="tab-pane fade" id="riwayatPendidikan-tab-pane" role="tabpanel" aria-labelledby="riwayatPendidikan-tab" tabindex="0">
+                                <!-- Riwayat Pendidikan 1 -->
+                                <h6 class="text-primary" id="titleRiwayatPendidikan1" style="display: none;">Pendidikan #1 <span class="text-muted">Wajib</span></h6>
                                 <div class="mb-3">
-                                    <label for="jenis_pendidikan" class="form-label">Jenis Pendidikan</label>
-                                    <select name="jenis_pendidikan" id="jenis_pendidikan" class="form-select" required>
-                                        <option value="" disabled selected>Pilih</option>
-                                        <option value="Formal">Formal</option>
-                                        <option value="Non Formal">Non Formal</option>
+                                    <label for="jenis_pendidikan1" class="form-label">Jenis Pendidikan</label>
+                                    <select name="jenis_pendidikan1" id="jenis_pendidikan1" class="form-select" required>
+                                        <option value="Formal" selected>Formal</option>
                                     </select>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="jenjang_pendidikan" class="form-label">Jenjang Pendidikan</label>
-                                    <input type="text" class="form-control" id="jenjang_pendidikan" name="jenjang_pendidikan" placeholder="SMK/SMA/S1/S2/.." autocomplete="off">
+                                    <label for="jenjang_pendidikan1" class="form-label">Jenjang Pendidikan</label>
+                                    <input type="text" class="form-control" id="jenjang_pendidikan1" name="jenjang_pendidikan1" placeholder="Pendidikan terakhir (SMK/SMA/S1/..)" autocomplete="off">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="program_keahlian" class="form-label">Program Keahlian</label>
-                                    <input type="text" class="form-control" id="program_keahlian" name="program_keahlian" placeholder="IPA/IPS/Akuntansi/.." autocomplete="off" required>
+                                    <label for="program_keahlian1" class="form-label">Program Keahlian</label>
+                                    <input type="text" class="form-control" id="program_keahlian1" name="program_keahlian1" placeholder="IPA/IPS/Akuntansi/.." autocomplete="off" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="nama_lembaga" class="form-label">Nama Lembaga</label>
-                                    <input type="text" class="form-control" id="nama_lembaga" name="nama_lembaga" autocomplete="off" required>
+                                    <label for="nama_lembaga1" class="form-label">Nama Lembaga</label>
+                                    <input type="text" class="form-control" id="nama_lembaga1" name="nama_lembaga1" placeholder="Universitas Indonesia" autocomplete="off" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="alamat_lembaga" class="form-label">Alamat Lembaga</label>
-                                    <textarea name="alamat_lembaga" id="alamat_lembaga" class="form-control"></textarea>
+                                    <label for="alamat_lembaga1" class="form-label">Alamat Lembaga</label>
+                                    <textarea name="alamat_lembaga1" id="alamat_lembaga1" class="form-control" required></textarea>
                                 </div>
                                 <div class="mb-3">
                                     <label for="">Berijazah</label>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="berijazah" id="ya" value="Ya" checked>
-                                        <label class="form-check-label" for="ya">
+                                        <input class="form-check-input" type="radio" name="berijazah1" id="ya1" value="Ya" checked>
+                                        <label class="form-check-label" for="ya1">
                                             Ya
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="berijazah" id="tidak" value="Tidak">
-                                        <label class="form-check-label" for="tidak">
+                                        <input class="form-check-input" type="radio" name="berijazah1" id="tidak1" value="Tidak">
+                                        <label class="form-check-label" for="tidak1">
                                             Tidak
                                         </label>
                                     </div>
                                 </div>
+
+                                <div class="mb-3">
+                                    <button type="button" class="btn btn-success btn-sm" onclick="toggleElement1()"><i class="bi bi-journal-plus"></i> Pendidikan</button>
+                                </div>
+
+                                <!-- Riwayat Pendidikan 2 -->
+                                <div class="mb-3" id="riwayatPendidikan2" style="display: none;">
+                                    <hr class="text-primary">
+                                    <h6 class="text-primary">Pendidikan #2 (Kursus Keterampilan #1) <span class="text-muted">Jika ada</span></h6>
+                                    <div class="mb-3">
+                                        <label for="jenis_pendidikan2" class="form-label">Jenis Pendidikan</label>
+                                        <select name="jenis_pendidikan2" id="jenis_pendidikan2" class="form-select">
+                                            <option value="" selected>Pilih</option>
+                                            <option value="Non Formal">Non Formal</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="jenjang_pendidikan2" class="form-label">Jenjang Pendidikan</label>
+                                        <select name="jenjang_pendidikan2" id="jenjang_pendidikan2" class="form-select">
+                                            <option value="" selected>Pilih</option>
+                                            <option value="Basic">Basic</option>
+                                            <option value="Medium">Medium</option>
+                                            <option value="Advanced">Advanced</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="program_keahlian2" class="form-label">Program Keahlian</label>
+                                        <input type="text" class="form-control" id="program_keahlian2" name="program_keahlian2" placeholder="Business Analyst" autocomplete="off">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="nama_lembaga2" class="form-label">Nama Lembaga</label>
+                                        <input type="text" class="form-control" id="nama_lembaga2" name="nama_lembaga2" autocomplete="off">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="alamat_lembaga2" class="form-label">Alamat Lembaga</label>
+                                        <textarea name="alamat_lembaga2" id="alamat_lembaga2" class="form-control"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="">Berijazah</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="berijazah2" id="ya2" value="Ya">
+                                            <label class="form-check-label" for="ya2">
+                                                Ya
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="berijazah2" id="tidak2" value="Tidak">
+                                            <label class="form-check-label" for="tidak2">
+                                                Tidak
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <button type="button" class="btn btn-success btn-sm" onclick="toggleElement2()"><i class="bi bi-journal-plus"></i> Pendidikan</button>
+                                    </div>
+                                </div>
+
+
+                                <!-- Riwayat Pendidikan 3 -->
+                                <div class="mb-3" id="riwayatPendidikan3" style="display: none;">
+                                    <hr class="text-primary">
+                                    <h6 class="text-primary">Pendidikan #3 (Kursus Keterampilan #2) <span class="text-muted">Jika ada</span></h6>
+                                    <div class="mb-3">
+                                        <label for="jenis_pendidikan3" class="form-label">Jenis Pendidikan</label>
+                                        <select name="jenis_pendidikan3" id="jenis_pendidikan3" class="form-select">
+                                            <option value="" selected>Pilih</option>
+                                            <option value="Non Formal">Non Formal</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="jenjang_pendidikan3" class="form-label">Jenjang Pendidikan</label>
+                                        <select name="jenjang_pendidikan3" id="jenjang_pendidikan3" class="form-select">
+                                            <option value="" selected>Pilih</option>
+                                            <option value="Basic">Basic</option>
+                                            <option value="Medium">Medium</option>
+                                            <option value="Advanced">Advanced</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="program_keahlian3" class="form-label">Program Keahlian</label>
+                                        <input type="text" class="form-control" id="program_keahlian3" name="program_keahlian3" placeholder="Driving Forklift" autocomplete="off">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="nama_lembaga3" class="form-label">Nama Lembaga</label>
+                                        <input type="text" class="form-control" id="nama_lembaga3" name="nama_lembaga3" autocomplete="off">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="alamat_lembaga3" class="form-label">Alamat Lembaga</label>
+                                        <textarea name="alamat_lembaga3" id="alamat_lembaga3" class="form-control"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="">Berijazah</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="berijazah3" id="ya3" value="Ya">
+                                            <label class="form-check-label" for="ya3">
+                                                Ya
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="berijazah3" id="tidak3" value="Tidak">
+                                            <label class="form-check-label" for="tidak3">
+                                                Tidak
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>                                
+
+                                <script>
+                                    function toggleElement1() {
+                                        var a = document.getElementById('riwayatPendidikan2');
+                                        var b = document.getElementById('titleRiwayatPendidikan1');
+                                        if(a.style.display === 'none') {
+                                            a.style.display = 'block';
+                                            b.style.display = 'block';
+                                        } else {
+                                            a.style.display = 'none';
+                                            b.style.display = 'none';
+                                        }
+                                    }
+
+                                    function toggleElement2() {
+                                        var a = document.getElementById('riwayatPendidikan3');
+                                        if(a.style.display === 'none') {
+                                            a.style.display = 'block';
+                                        } else {
+                                            a.style.display = 'none';
+                                        }
+                                    }
+                                </script>
                             </div>
                             
                             <div class="tab-pane fade" id="pengalamanKerja-tab-pane" role="tabpanel" aria-labelledby="pengalamanKerja-tab" tabindex="0">
+                                <!-- Pengalaman Kerja 1 -->
+                                <h6 class="text-primary" id="titlePengalamanKerja1" style="display: none;">Pengalaman Kerja #1</h6>
                                 <div class="mb-3">
-                                    <label for="nama_perusahaan" class="form-label">Nama Perusahaan</label>
-                                    <input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan" autocomplete="off">
+                                    <label for="nama_perusahaan1" class="form-label">Nama Perusahaan</label>
+                                    <input type="text" class="form-control" id="nama_perusahaan1" name="nama_perusahaan1" autocomplete="off">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="jabatan" class="form-label">Jabatan</label>
-                                    <input type="text" class="form-control" id="jabatan" name="jabatan" autocomplete="off">
+                                    <label for="jabatan1" class="form-label">Jabatan</label>
+                                    <input type="text" class="form-control" id="jabatan1" name="jabatan1" autocomplete="off">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="dept" class="form-label">Department</label>
-                                    <input type="text" class="form-control" id="dept" name="dept" autocomplete="off">
+                                    <label for="dept1" class="form-label">Department</label>
+                                    <input type="text" class="form-control" id="dept1" name="dept1" autocomplete="off">
                                 </div>
-                                <label for="durasi" class="form-label">Durasi Kerja</label>
+                                <label for="durasi1" class="form-label">Durasi Kerja</label>
                                 <div class="input-group mb-3">
-                                    <input type="number" class="form-control" id="durasi" name="durasi" autocomplete="off">
+                                    <input type="number" class="form-control" id="durasi1" name="durasi1" autocomplete="off">
                                     <span class="input-group-text">Bulan</span>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="alasan_berhenti" class="form-label">Alasan Berhenti</label>
-                                    <input type="text" class="form-control" id="alasan_berhenti" name="alasan_berhenti" autocomplete="off">
+                                    <label for="alasan_berhenti1" class="form-label">Alasan Berhenti</label>
+                                    <input type="text" class="form-control" id="alasan_berhenti1" name="alasan_berhenti1" autocomplete="off">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="jobdesc" class="form-label">Uraian Pekerjaan</label>
-                                    <textarea name="jobdesc" id="jobdesc" class="form-control"></textarea>
+                                    <label for="jobdesc1" class="form-label">Uraian Pekerjaan</label>
+                                    <textarea name="jobdesc1" id="jobdesc1" class="form-control"></textarea>
                                 </div>
-                                <label for="gaji_terakhir" class="form-label">Gaji Terakhir</label>
+                                <label for="gaji_terakhir1" class="form-label">Gaji Terakhir</label>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text">Rp.</span>
-                                    <input type="number" class="form-control" id="gaji_terakhir" name="gaji_terakhir">
+                                    <input type="number" class="form-control" id="gaji_terakhir1" name="gaji_terakhir1">
                                 </div>
+                                <div class="mb-3">
+                                    <button type="button" class="btn btn-success" onclick="togglePengalamanKerja1()"><i class="bi bi-journal-plus"></i> Pengalaman</button>
+                                </div>
+
+                                <!-- Pengalaman Kerja 2 -->
+                                <div class="mb-3" id="pengalamanKerja2" style="display: none;">
+                                    <hr class="text-primary">
+                                    <h6 class="text-primary">Pengalaman Kerja #2</h6>
+                                    <div class="mb-3">
+                                        <label for="nama_perusahaan2" class="form-label">Nama Perusahaan</label>
+                                        <input type="text" class="form-control" id="nama_perusahaan2" name="nama_perusahaan2" autocomplete="off">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="jabatan2" class="form-label">Jabatan</label>
+                                        <input type="text" class="form-control" id="jabatan2" name="jabatan2" autocomplete="off">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="dept2" class="form-label">Department</label>
+                                        <input type="text" class="form-control" id="dept2" name="dept2" autocomplete="off">
+                                    </div>
+                                    <label for="durasi2" class="form-label">Durasi Kerja</label>
+                                    <div class="input-group mb-3">
+                                        <input type="number" class="form-control" id="durasi2" name="durasi2" autocomplete="off">
+                                        <span class="input-group-text">Bulan</span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="alasan_berhenti2" class="form-label">Alasan Berhenti</label>
+                                        <input type="text" class="form-control" id="alasan_berhenti2" name="alasan_berhenti2" autocomplete="off">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="jobdesc2" class="form-label">Uraian Pekerjaan</label>
+                                        <textarea name="jobdesc2" id="jobdesc2" class="form-control"></textarea>
+                                    </div>
+                                    <label for="gaji_terakhir2" class="form-label">Gaji Terakhir</label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">Rp.</span>
+                                        <input type="number" class="form-control" id="gaji_terakhir2" name="gaji_terakhir2">
+                                    </div>
+                                    <div class="mb-3">
+                                        <button type="button" class="btn btn-success" onclick="togglePengalamanKerja2()"><i class="bi bi-journal-plus"></i> Pengalaman</button>
+                                    </div>
+                                </div>
+
+                                <!-- Pengalaman Kerja 3 -->
+                                <div class="mb-3" id="pengalamanKerja3" style="display: none;">
+                                    <hr class="text-primary">
+                                    <h6 class="text-primary">Pengalaman Kerja #3</h6>
+                                    <div class="mb-3">
+                                        <label for="nama_perusahaan3" class="form-label">Nama Perusahaan</label>
+                                        <input type="text" class="form-control" id="nama_perusahaan3" name="nama_perusahaan3" autocomplete="off">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="jabatan3" class="form-label">Jabatan</label>
+                                        <input type="text" class="form-control" id="jabatan3" name="jabatan3" autocomplete="off">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="dept3" class="form-label">Department</label>
+                                        <input type="text" class="form-control" id="dept3" name="dept3" autocomplete="off">
+                                    </div>
+                                    <label for="durasi3" class="form-label">Durasi Kerja</label>
+                                    <div class="input-group mb-3">
+                                        <input type="number" class="form-control" id="durasi3" name="durasi3" autocomplete="off">
+                                        <span class="input-group-text">Bulan</span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="alasan_berhenti3" class="form-label">Alasan Berhenti</label>
+                                        <input type="text" class="form-control" id="alasan_berhenti3" name="alasan_berhenti3" autocomplete="off">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="jobdesc3" class="form-label">Uraian Pekerjaan</label>
+                                        <textarea name="jobdesc3" id="jobdesc3" class="form-control"></textarea>
+                                    </div>
+                                    <label for="gaji_terakhir3" class="form-label">Gaji Terakhir</label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">Rp.</span>
+                                        <input type="number" class="form-control" id="gaji_terakhir3" name="gaji_terakhir3">
+                                    </div>
+                                </div>
+
+                                <script>
+                                    function togglePengalamanKerja1() {
+                                        var a = document.getElementById('pengalamanKerja2');
+                                        var b = document.getElementById('titlePengalamanKerja1');
+                                        if(a.style.display === 'none') {
+                                            a.style.display = 'block';
+                                            b.style.display = 'block';
+                                        } else {
+                                            a.style.display = 'none';
+                                            b.style.display = 'none';
+                                        }
+                                    }
+
+                                    function togglePengalamanKerja2() {
+                                        var a = document.getElementById('pengalamanKerja3');
+                                        if(a.style.display === 'none') {
+                                            a.style.display = 'block';
+                                        } else {
+                                            a.style.display = 'none';
+                                        }
+                                    }
+                                </script>
                             </div>
                         </div>
                     </div>
