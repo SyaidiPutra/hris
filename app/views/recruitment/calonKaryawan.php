@@ -179,7 +179,7 @@
                                     <span class="input-group-text">Rp.</span>
                                     <input type="number" class="form-control" id="keinginan_gaji" name="keinginan_gaji" autocomplete="off" required>
                                 </div>
-                                <div class="mb-3 me-auto">
+                                <div class="mb-3">
                                     <a href="#newFormModalLabel"><sup><i class="bi bi-chevron-up"></i></sup> <span style="font-size: 12px;">back to top</span></a>
                                 </div>
                             </div>
@@ -330,6 +330,9 @@
                                             </label>
                                         </div>
                                     </div>
+                                    <div class="mb-3">
+                                        <a href="#newFormModalLabel"><sup><i class="bi bi-chevron-up"></i></sup> <span style="font-size: 12px;">back to top</span></a>
+                                    </div>
                                 </div>                                
 
                                 <script>
@@ -465,6 +468,9 @@
                                     <div class="input-group mb-3">
                                         <span class="input-group-text">Rp.</span>
                                         <input type="number" class="form-control" id="gaji_terakhir3" name="gaji_terakhir3">
+                                    </div>
+                                    <div class="mb-3">
+                                        <a href="#newFormModalLabel"><sup><i class="bi bi-chevron-up"></i></sup> <span style="font-size: 12px;">back to top</span></a>
                                     </div>
                                 </div>
 
