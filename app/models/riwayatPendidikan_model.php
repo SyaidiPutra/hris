@@ -71,7 +71,7 @@ class riwayatPendidikan_model
 
     public function destroy($data)
     {
-        $query = "DELETE FROM riwayat_pendidikan WHERE id = :id";
+        $query = "DELETE FROM riwayat_pendidikan WHERE id_calon_karyawan = :id";
         $this->db->query($query);
         $this->db->bind('id', $data['id']);
 

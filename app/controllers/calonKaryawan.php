@@ -74,14 +74,25 @@ class calonKaryawan extends Controller
 
     public function destroy()
     {
-        $delete = $this->model('calonKaryawan_model')->destroy($_POST);
+        $deletePengalamanKerja = $this->model('pengalamanKerja_model')->destroy($_POST);
 
-        if($delete > 0) {
-            Flasher::setFlash('primary', 'Berhasil menghapus ' . $_POST['nama_depan'], '<i class="bi bi-check2-circle"></i>');
-            header('Location: ' . BASEURL . '/calonKaryawan');
-
+        if($deletePengalamanKerja > 0) {
+            $deleteRiwayatPendidikan = $this->model('riwayatPendidikan_model')->destroy($_POST);
+            if($deleteRiwayatPendidikan > 0) {
+                $deleteBiodata = $this->model('calonKaryawan_model')->destroy($_POST);
+                if($deleteBiodata > 0) {
+                    Flasher::setFlash('primary', 'Berhasil menghapus biodata, riwayat pendidikan & pengalaman kerja ' . $_POST['nama_depan'], ' <i class="bi bi-check2-circle"></i>');
+                    header('Location: ' . BASEURL . '/calonKaryawan');
+                } else {
+                    Flasher::setFlash('danger', 'Gagal menghapus biodata ' . $_POST['nama_depan'], ' !');
+                    header('Location: ' . BASEURL . '/calonKaryawan');
+                }
+            } else {
+                Flasher::setFlash('danger', 'Gagal menghapus riwayat pendidikan ' . $_POST['nama_depan'], ' !');
+                header('Location: ' . BASEURL . '/calonKaryawan');
+            }
         } else {
-            Flasher::setFlash('danger', 'Gagal menghapus ' . $_POST['nama_depan'], ' !');
+            Flasher::setFlash('danger', 'Gagal menghapus pengalaman kerja ' . $_POST['nama_depan'], ' !');
             header('Location: ' . BASEURL . '/calonKaryawan');
         }
     }

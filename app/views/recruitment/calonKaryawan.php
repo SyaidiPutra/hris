@@ -192,11 +192,11 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="jenjang_pendidikan" class="form-label">Jenjang Pendidikan</label>
-                                    <input type="text" class="form-control" id="jenjang_pendidikan" name="jenjang_pendidikan" autocomplete="off">
+                                    <input type="text" class="form-control" id="jenjang_pendidikan" name="jenjang_pendidikan" placeholder="SMK/SMA/S1/S2/.." autocomplete="off">
                                 </div>
                                 <div class="mb-3">
                                     <label for="program_keahlian" class="form-label">Program Keahlian</label>
-                                    <input type="text" class="form-control" id="program_keahlian" name="program_keahlian" autocomplete="off" required>
+                                    <input type="text" class="form-control" id="program_keahlian" name="program_keahlian" placeholder="IPA/IPS/Akuntansi/.." autocomplete="off" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="nama_lembaga" class="form-label">Nama Lembaga</label>
@@ -441,11 +441,11 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="jenjang_pendidikan" class="form-label">Jenjang Pendidikan</label>
-                                    <input type="text" class="form-control" id="jenjang_pendidikan" name="jenjang_pendidikan" autocomplete="off" value="<?= $d['jenjang_pendidikan'] ?>">
+                                    <input type="text" class="form-control" id="jenjang_pendidikan" name="jenjang_pendidikan" placeholder="SMK/SMA/S1/S2/.." autocomplete="off" value="<?= $d['jenjang_pendidikan'] ?>">
                                 </div>
                                 <div class="mb-3">
                                     <label for="program_keahlian" class="form-label">Program Keahlian</label>
-                                    <input type="text" class="form-control" id="program_keahlian" name="program_keahlian" autocomplete="off" value="<?= $d['program_keahlian'] ?>" required>
+                                    <input type="text" class="form-control" id="program_keahlian" name="program_keahlian" placeholder="IPA/IPS/Akuntansi/.." autocomplete="off" value="<?= $d['program_keahlian'] ?>" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="nama_lembaga" class="form-label">Nama Lembaga</label>

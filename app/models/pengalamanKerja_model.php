@@ -74,7 +74,7 @@ class pengalamanKerja_model
 
     public function destroy($data)
     {
-        $query = "DELETE FROM pengalaman_kerja WHERE id = :id";
+        $query = "DELETE FROM pengalaman_kerja WHERE id_calon_karyawan = :id";
         $this->db->query($query);
         $this->db->bind('id', $data['id']);
 
