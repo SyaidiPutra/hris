@@ -179,6 +179,9 @@
                                     <span class="input-group-text">Rp.</span>
                                     <input type="number" class="form-control" id="keinginan_gaji" name="keinginan_gaji" autocomplete="off" required>
                                 </div>
+                                <div class="mb-3 me-auto">
+                                    <a href="#newFormModalLabel"><sup><i class="bi bi-chevron-up"></i></sup> <span style="font-size: 12px;">back to top</span></a>
+                                </div>
                             </div>
 
                             <div class="tab-pane fade" id="riwayatPendidikan-tab-pane" role="tabpanel" aria-labelledby="riwayatPendidikan-tab" tabindex="0">
