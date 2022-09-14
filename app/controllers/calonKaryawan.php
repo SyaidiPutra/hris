@@ -17,7 +17,7 @@ class calonKaryawan extends Controller
         ];
 
         $this->view('template/header', $data);
-        $this->view('sdm/calonKaryawan', $data);
+        $this->view('recruitment/calonKaryawan', $data);
         $this->view('template/footer');
     }
 
