@@ -1,43 +1,4 @@
-<div class="mb-3">
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#newFormModal">
-        <i class="bi bi-patch-plus"></i> Calon Karyawan
-    </button>
-</div>
-<div class="table-responsive">
-    <table class="table" id="table_id">
-        <thead>
-            <tr>
-                <th>No.</th>
-                <th>Nama Lengkap</th>
-                <th>Pendidikan</th>
-                <th>Pengalaman</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php $i = 1; ;?>
-            <?php foreach($data['data'] as $d) : ?>
-                <tr>
-                    <td><?= $i++ ?></td>
-                    <td><a href="<?= BASEURL ?>/calonKaryawan/biodataEdit/<?= $d['id'] ?>" data-bs-toggle="tooltip" data-bs-title="Klik untuk mengedit"><?= $d['nama_depan'] ?> <?= $d['nama_tengah'] ?> <?= $d['nama_belakang'] ?></a></td>
-                    <td><a href="<?= BASEURL ?>/calonKaryawan/pendidikanEdit/<?= $d['id'] ?>" data-bs-toggle="tooltip" data-bs-title="Klik untuk mengedit"><?= $d['jenjang_pendidikan'] ?> <?= $d['program_keahlian'] ?> @<?= $d['nama_lembaga'] ?></a></td>
-                    <td><a href="<?= BASEURL ?>/calonKaryawan/pengalamanEdit/<?= $d['id'] ?>" data-bs-toggle="tooltip" data-bs-title="Klik untuk mengedit"><?= $d['nama_perusahaan'] ?> (<?= $d['jabatan'] ?> <?= $d['dept'] ?>, <?= ROUND($d['durasi']/12, 1) ?> Tahun)</a></td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-</div>
-
-<!-- New Form Modal -->
-<div class="modal fade" id="newFormModal" tabindex="-1" aria-labelledby="newFormModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="newFormModalLabel">Add New Calon Karyawan</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="tab-content" id="myTabContent">
-                <form action="<?= BASEURL; ?>/calonKaryawan/store" method="POST">
+<form action="<?= BASEURL; ?>/calonKaryawan/store" method="POST">
                     <div class="modal-body">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
@@ -502,33 +463,3 @@
                         <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
                     </div>
                 </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Delete Form Modal -->
-<?php foreach($data['data'] as $d) : ?>
-    <div class="modal fade" id="deleteFormModal<?= $d['id'] ?>" tabindex="-1" aria-labelledby="deleteFormModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteFormModalLabel">Confirmation</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <form action="<?= BASEURL; ?>/calonKaryawan/destroy" method="POST">
-                <input type="hidden" name="id" value="<?= $d['id'] ?>">
-                <input type="hidden" name="nama_depan" value="<?= $d['nama_depan'] ?>">
-                <div class="container text-center mt-3">
-                    <p>Calon Karyawan "<b><?= $d['nama_depan'] ?></b>" akan dihapus secara permanen <i class="bi bi-exclamation-octagon text-warning"></i></p>
-                    <h3 class="text-danger">Yakin hapus data ini <i class="bi bi-question-octagon"></i></h3>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-danger btn-sm">Yes</button>
-                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
-                </div>
-            </form>
-            </div>
-        </div>
-    </div>
-<?php endforeach; ?>

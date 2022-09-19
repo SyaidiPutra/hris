@@ -9,9 +9,10 @@ class riwayatPendidikan_model
         $this->db = new Database;
     }
     
-    public function getRiwayatPendidikan()
+    public function getRiwayatPendidikan($id)
     {
-        $this->db->query("SELECT * FROM riwayat_pendidikan");
+        $this->db->query("SELECT rp.*, ck.nama_depan FROM riwayat_pendidikan AS rp LEFT JOIN calon_karyawan AS ck ON rp.id_calon_karyawan = ck.id WHERE id_calon_karyawan = :id");
+        $this->db->bind('id', $id);
         return $this->db->resultSet();
     }
 
@@ -84,7 +85,9 @@ class riwayatPendidikan_model
 
     public function update($data)
     {
-        $query = "UPDATE riwayat_pendidikan SET
+        // var_dump($data)       ;
+        // die;
+            $query = "UPDATE riwayat_pendidikan SET
             id = :id,
             id_calon_karyawan = :id_calon_karyawan,
             jenis_pendidikan = :jenis_pendidikan,
@@ -99,8 +102,8 @@ class riwayatPendidikan_model
         ";
 
         $this->db->query($query);
-        $this->db->bind('id', $data['id_riwayat_pendidikan']);
-        $this->db->bind('id_calon_karyawan', $data['rp_id_calon_karyawan']);
+        $this->db->bind('id', $data['id']);
+        $this->db->bind('id_calon_karyawan', $data['id_calon_karyawan']);
         $this->db->bind('jenis_pendidikan', $data['jenis_pendidikan']);
         $this->db->bind('jenjang_pendidikan', $data['jenjang_pendidikan']);
         $this->db->bind('program_keahlian', $data['program_keahlian']);
@@ -109,7 +112,7 @@ class riwayatPendidikan_model
         $this->db->bind('berijazah', $data['berijazah']);
         $this->db->bind('created_at', $data['created_at']);
         $this->db->bind('updated_at', date('Y-m-d h:i:s'));
-        $this->db->bind('id', $data['id_riwayat_pendidikan']);
+        $this->db->bind('id', $data['id']);
 
         $this->db->execute();
 

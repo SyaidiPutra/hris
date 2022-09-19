@@ -8,35 +8,6 @@ class calonKaryawan_model
     {
         $this->db = new Database;
     }
-    
-    public function getCalonKaryawan()
-    {
-        $this->db->query("SELECT ck.*,
-        GROUP_CONCAT(rp.id) AS id_riwayat_pendidikan,
-        GROUP_CONCAT(rp.id_calon_karyawan) AS rp_id_calon_karyawan,
-        GROUP_CONCAT(DISTINCT(rp.jenis_pendidikan)) AS jenis_pendidikan,
-        GROUP_CONCAT(rp.jenjang_pendidikan) AS jenjang_pendidikan,
-        GROUP_CONCAT(rp.program_keahlian) AS program_keahlian,
-        GROUP_CONCAT(rp.nama_lembaga) AS nama_lembaga,
-        GROUP_CONCAT(rp.alamat_lembaga) AS alamat_lembaga,
-        GROUP_CONCAT(rp.berijazah) AS berijazah,
-        GROUP_CONCAT(rp.created_at) AS rp_created_at,
-        GROUP_CONCAT(pk.id) AS id_pengalaman_kerja,
-        GROUP_CONCAT(pk.id_calon_karyawan) AS pk_id_calon_karyawan,
-        GROUP_CONCAT(DISTINCT(pk.nama_perusahaan)) AS nama_perusahaan,
-        GROUP_CONCAT(pk.jabatan) AS jabatan,
-        GROUP_CONCAT(pk.dept) AS dept,
-        GROUP_CONCAT(pk.durasi) AS durasi,
-        GROUP_CONCAT(pk.alasan_berhenti) AS alasan_berhenti,
-        GROUP_CONCAT(pk.jobdesc) AS jobdesc,
-        GROUP_CONCAT(pk.gaji_terakhir) AS gaji_terakhir,
-        GROUP_CONCAT(pk.created_at) AS pk_created_at
-        FROM calon_karyawan AS ck
-        INNER JOIN riwayat_pendidikan AS rp ON ck.id = rp.id_calon_karyawan
-        LEFT JOIN pengalaman_kerja AS pk ON ck.id = pk.id_calon_karyawan
-        GROUP BY ck.id");
-        return $this->db->resultSet();
-    }
 
     public function store($data)
     {
@@ -78,8 +49,44 @@ class calonKaryawan_model
 
         return $this->db->rowCount();
     }
+    
+    public function getCalonKaryawan()
+    {
+        $this->db->query("SELECT ck.*,
+        rp.id AS id_riwayat_pendidikan,
+        rp.id_calon_karyawan AS rp_id_calon_karyawan,
+        rp.jenis_pendidikan AS jenis_pendidikan,
+        rp.jenjang_pendidikan AS jenjang_pendidikan,
+        rp.program_keahlian AS program_keahlian,
+        rp.nama_lembaga AS nama_lembaga,
+        rp.alamat_lembaga AS alamat_lembaga,
+        rp.berijazah AS berijazah,
+        rp.created_at AS rp_created_at,
+        pk.id AS id_pengalaman_kerja,
+        pk.id_calon_karyawan AS pk_id_calon_karyawan,
+        pk.nama_perusahaan AS nama_perusahaan,
+        pk.jabatan AS jabatan,
+        pk.dept AS dept,
+        pk.durasi AS durasi,
+        pk.alasan_berhenti AS alasan_berhenti,
+        pk.jobdesc AS jobdesc,
+        pk.gaji_terakhir AS gaji_terakhir,
+        pk.created_at AS pk_created_at
+        FROM calon_karyawan AS ck
+        RIGHT JOIN riwayat_pendidikan AS rp ON ck.id = rp.id_calon_karyawan
+        RIGHT JOIN pengalaman_kerja AS pk ON ck.id = pk.id_calon_karyawan
+        GROUP BY ck.id ORDER BY ck.id");
+        return $this->db->resultSet();
+    }
+    
+    public function getBiodata($id)
+    {
+        $this->db->query("SELECT * FROM calon_karyawan WHERE id = :id");
+        $this->db->bind('id', $id);
+        return $this->db->resultSet();
+    }
 
-    public function update($data)
+    public function updateBiodata($data)
     {
         $query = "UPDATE calon_karyawan SET
             id = :id,

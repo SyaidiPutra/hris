@@ -21,6 +21,62 @@ class calonKaryawan extends Controller
         $this->view('template/footer');
     }
 
+    public function biodataEdit($id)
+    {
+        if(!isset($_SESSION['user'])) {
+            header('Location: ' . BASEURL);
+        }
+        
+        $data = [
+            'title' => 'Dashboard',
+            'breadcrumb' => 'SDM',
+            'breadcrumb_active' => 'Biodata Calon Karyawan / Edit',
+            'href' => 'calonKaryawan',
+            'data' => $this->model('calonKaryawan_model')->getBiodata($id)
+        ];
+
+        $this->view('template/header', $data);
+        $this->view('recruitment/biodataEdit', $data);
+        $this->view('template/footer');
+    }
+
+    public function biodataUpdate()
+    {
+        if($this->model('calonKaryawan_model')->updateBiodata($_POST) > 0) {
+            Flasher::setFlash('success', 'Berhasil merubah biodata ' . $_POST['nama_depan'], '<i class="bi bi-check2-circle"></i>');
+            header('Location: ' . BASEURL . '/calonKaryawan');
+        }
+    }
+
+    public function pendidikanEdit($id)
+    {
+        if(!isset($_SESSION['user'])) {
+            header('Location: ' . BASEURL);
+        }
+        
+        $data = [
+            'title' => 'Dashboard',
+            'breadcrumb' => 'SDM',
+            'breadcrumb_active' => 'Pendidikan Calon Karyawan / Edit',
+            'href' => 'calonKaryawan',
+            'data' => $this->model('riwayatPendidikan_model')->getRiwayatPendidikan($id)
+        ];
+
+        $this->view('template/header', $data);
+        $this->view('recruitment/pendidikanEdit', $data);
+        $this->view('template/footer');
+    }
+
+    public function PendidikanUpdate()
+    {
+        // var_dump($_POST);
+        // die;
+        if($this->model('riwayatPendidikan_model')->update($_POST) > 0) {
+            Flasher::setFlash('success', 'Berhasil merubah pendidikan ' . $_POST['nama_depan'], '<i class="bi bi-check2-circle"></i>');
+            header('Location: ' . BASEURL . '/calonKaryawan');
+        }
+    }
+
     public function store()
     {
         $storeBiodata = $this->model('calonKaryawan_model')->store($_POST);
