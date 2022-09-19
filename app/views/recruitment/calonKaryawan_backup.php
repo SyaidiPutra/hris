@@ -182,54 +182,49 @@
                                 </div>
                             </div>
 
-                            <!-- Riwayat Pendidikan 1 -->
                             <div class="tab-pane fade" id="riwayatPendidikan-tab-pane" role="tabpanel" aria-labelledby="riwayatPendidikan-tab" tabindex="0">
-                                <div id="PendidikanBox">
-                                    <div class="mb-3">
-                                        <h6 class="text-primary" id="titleRiwayatPendidikan1" style="display: none;">Pendidikan #1 <span class="text-muted">Wajib</span></h6>
-                                        <div class="mb-3">
-                                            <label for="jenis_pendidikan1" class="form-label">Jenis Pendidikan</label>
-                                            <select name="jenis_pendidikan1" id="jenis_pendidikan1" class="form-select" required>
-                                                <option value="Formal" selected>Formal</option>
-                                            </select>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="jenjang_pendidikan1" class="form-label">Jenjang Pendidikan</label>
-                                            <input type="text" class="form-control" id="jenjang_pendidikan1" name="jenjang_pendidikan1" placeholder="Pendidikan terakhir (SMK/SMA/S1/..)" autocomplete="off">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="program_keahlian1" class="form-label">Program Keahlian</label>
-                                            <input type="text" class="form-control" id="program_keahlian1" name="program_keahlian1" placeholder="IPA/IPS/Akuntansi/.." autocomplete="off" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="nama_lembaga1" class="form-label">Nama Lembaga</label>
-                                            <input type="text" class="form-control" id="nama_lembaga1" name="nama_lembaga1" placeholder="Universitas Indonesia" autocomplete="off" required>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="alamat_lembaga1" class="form-label">Alamat Lembaga</label>
-                                            <textarea name="alamat_lembaga1" id="alamat_lembaga1" class="form-control" required></textarea>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="">Berijazah</label>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="berijazah1" id="ya1" value="Ya" checked>
-                                                <label class="form-check-label" for="ya1">
-                                                    Ya
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="berijazah1" id="tidak1" value="Tidak">
-                                                <label class="form-check-label" for="tidak1">
-                                                    Tidak
-                                                </label>
-                                            </div>
-                                        </div>
+                                <!-- Riwayat Pendidikan 1 -->
+                                <h6 class="text-primary" id="titleRiwayatPendidikan1" style="display: none;">Pendidikan #1 <span class="text-muted">Wajib</span></h6>
+                                <div class="mb-3">
+                                    <label for="jenis_pendidikan1" class="form-label">Jenis Pendidikan</label>
+                                    <select name="jenis_pendidikan1" id="jenis_pendidikan1" class="form-select" required>
+                                        <option value="Formal" selected>Formal</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="jenjang_pendidikan1" class="form-label">Jenjang Pendidikan</label>
+                                    <input type="text" class="form-control" id="jenjang_pendidikan1" name="jenjang_pendidikan1" placeholder="Pendidikan terakhir (SMK/SMA/S1/..)" autocomplete="off">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="program_keahlian1" class="form-label">Program Keahlian</label>
+                                    <input type="text" class="form-control" id="program_keahlian1" name="program_keahlian1" placeholder="IPA/IPS/Akuntansi/.." autocomplete="off" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="nama_lembaga1" class="form-label">Nama Lembaga</label>
+                                    <input type="text" class="form-control" id="nama_lembaga1" name="nama_lembaga1" placeholder="Universitas Indonesia" autocomplete="off" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="alamat_lembaga1" class="form-label">Alamat Lembaga</label>
+                                    <textarea name="alamat_lembaga1" id="alamat_lembaga1" class="form-control" required></textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="">Berijazah</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="berijazah1" id="ya1" value="Ya" checked>
+                                        <label class="form-check-label" for="ya1">
+                                            Ya
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="berijazah1" id="tidak1" value="Tidak">
+                                        <label class="form-check-label" for="tidak1">
+                                            Tidak
+                                        </label>
                                     </div>
                                 </div>
-                                
 
                                 <div class="mb-3">
-                                    <button type="button" class="btn btn-success btn-sm" onclick="AddFormPendidikan()"><i class="bi bi-journal-plus"></i> Pendidikan</button>
+                                    <button type="button" class="btn btn-success btn-sm" onclick="toggleElement1()"><i class="bi bi-journal-plus"></i> Pendidikan</button>
                                 </div>
 
                                 <!-- Riwayat Pendidikan 2 -->
